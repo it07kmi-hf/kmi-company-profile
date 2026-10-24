@@ -1,69 +1,205 @@
-import Image from "next/image";
+'use client'
+
+import { useState, useEffect, useRef, useCallback } from 'react'
+import Header from '@/components/Header'
+import HeroSection from '@/components/HeroSection'
+import CategoriesCarousel from '@/components/CategoriesCarousel'
+import NewCollectionsSection from '@/components/NewCollectionsSection'
+import CraftsmanshipSplitSection from '@/components/CraftsmanshipSplitSection'
+import FooterSection from '@/components/FooterSection'
+import FloatingButton from '@/components/FloatingButton'
+import SearchModal from '@/components/SearchModal'
+
+const TOTAL_SECTIONS = 5
+
+const SECTION_NAMES = [
+  'Hero',
+  'Categories',
+  'Collections',
+  'Craftsmanship',
+  'Contact & Location',
+]
 
 export default function Home() {
+  const [currentSection, setCurrentSection] = useState(0)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const isAnimatingRef = useRef(false)
+  const currentSectionRef = useRef(0)
+
+  useEffect(() => {
+    currentSectionRef.current = currentSection
+  }, [currentSection])
+
+  const goToSection = useCallback((index: number) => {
+    if (index < 0 || index >= TOTAL_SECTIONS) return
+    if (index === currentSectionRef.current) return
+
+    isAnimatingRef.current = true
+    setCurrentSection(index)
+
+    // Lock further scrolls until 1000ms smooth animation completes
+    setTimeout(() => {
+      isAnimatingRef.current = false
+    }, 1050)
+  }, [])
+
+  // Wheel listener for single-scroll precision slide (like fullPage.js)
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Allow horizontal scroll on category carousel without triggering vertical slide
+      const target = e.target as HTMLElement | null
+      if (
+        target?.closest('#categories') &&
+        Math.abs(e.deltaX) > Math.abs(e.deltaY)
+      ) {
+        return
+      }
+
+      if (isAnimatingRef.current) return
+
+      // Threshold to prevent micro-jitters
+      if (Math.abs(e.deltaY) < 30) return
+
+      if (e.deltaY > 0) {
+        // Scroll down
+        if (currentSectionRef.current < TOTAL_SECTIONS - 1) {
+          goToSection(currentSectionRef.current + 1)
+        }
+      } else {
+        // Scroll up
+        if (currentSectionRef.current > 0) {
+          goToSection(currentSectionRef.current - 1)
+        }
+      }
+    }
+
+    let touchStartY = 0
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY
+    }
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (isAnimatingRef.current) return
+      const diff = touchStartY - e.changedTouches[0].clientY
+      if (Math.abs(diff) < 45) return
+
+      if (diff > 0) {
+        if (currentSectionRef.current < TOTAL_SECTIONS - 1) {
+          goToSection(currentSectionRef.current + 1)
+        }
+      } else {
+        if (currentSectionRef.current > 0) {
+          goToSection(currentSectionRef.current - 1)
+        }
+      }
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (['ArrowDown', 'PageDown'].includes(e.code)) {
+        e.preventDefault()
+        if (currentSectionRef.current < TOTAL_SECTIONS - 1) {
+          goToSection(currentSectionRef.current + 1)
+        }
+      } else if (['ArrowUp', 'PageUp'].includes(e.code)) {
+        e.preventDefault()
+        if (currentSectionRef.current > 0) {
+          goToSection(currentSectionRef.current - 1)
+        }
+      }
+    }
+
+    window.addEventListener('wheel', handleWheel, { passive: true })
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [goToSection])
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="fixed inset-0 w-screen h-screen overflow-hidden bg-white text-gray-900 select-none">
+      {/* Navigation Header */}
+      <Header
+        currentSection={currentSection}
+        onNavigateSection={goToSection}
+        onOpenSearch={() => setSearchOpen(true)}
+      />
+
+      {/* FullPage Slide Container with exact 1000ms cubic-bezier (matching Q-Works fullPage.js) */}
+      <div
+        className="w-full h-full flex flex-col will-change-transform"
+        style={{
+          transform: `translateY(-${currentSection * 100}%)`,
+          transition: 'transform 1000ms cubic-bezier(0.645, 0.045, 0.355, 1)',
+        }}
+      >
+        {/* SECTION 0: HERO (100vh) */}
+        <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
+          <HeroSection onExploreClick={() => goToSection(1)} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* SECTION 1: EXPLORE OUR CATEGORIES (100vh - Pure White & Carousel) */}
+        <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
+          <CategoriesCarousel />
+        </div>
+
+        {/* SECTION 2: SEASONS NEW COLLECTIONS (100vh - Full Banner Slider) */}
+        <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
+          <NewCollectionsSection />
+        </div>
+
+        {/* SECTION 3: CRAFTSMANSHIP & SIDOARJO FACILITY (100vh - Split Screen) */}
+        <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
+          <CraftsmanshipSplitSection />
+        </div>
+
+        {/* SECTION 4: COMPLIANCE, FACTORY LOCATION & FOOTER (100vh) */}
+        <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
+          <FooterSection />
+        </div>
+      </div>
+
+      {/* Vertical Section Indicator Dots (Right Edge, exactly like fullPage.js) */}
+      <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col space-y-3">
+        {SECTION_NAMES.map((name, idx) => (
+          <button
+            key={idx}
+            onClick={() => goToSection(idx)}
+            className="group relative flex items-center justify-end cursor-pointer"
+            aria-label={`Go to ${name}`}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+            {/* Tooltip on hover */}
+            <span className="opacity-0 group-hover:opacity-100 mr-3 px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase rounded bg-black/80 text-white backdrop-blur-sm transition-opacity pointer-events-none whitespace-nowrap">
+              {name}
+            </span>
+            {/* Dot circle */}
+            <div
+              className={`rounded-full transition-all duration-300 ${
+                currentSection === idx
+                  ? 'w-3 h-3 bg-[#8C6239] ring-2 ring-[#8C6239]/40 ring-offset-2'
+                  : currentSection === 0
+                  ? 'w-2 h-2 bg-white/60 hover:bg-white'
+                  : 'w-2 h-2 bg-gray-400 hover:bg-gray-800'
+              }`}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          </button>
+        ))}
+      </div>
+
+      {/* Floating Action Button (+) */}
+      <FloatingButton onScrollToTop={() => goToSection(0)} />
+
+      {/* Search Modal */}
+      <SearchModal
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        onSelectResult={() => goToSection(1)}
+      />
     </div>
-  );
+  )
 }

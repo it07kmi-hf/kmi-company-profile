@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String?   @db.Text
+  image       String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  slug        String   @unique
+  woodType    String   // Jati (Teak), Mahoni (Mahogany), Sonokeling, Sungkai
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  description String   @db.Text
+  specs       String?  @db.Text // Dimensions, finish, packaging
+  images      String   @db.Text // JSON string array of URLs
+  isFeatured  Boolean  @default(false)
+  isNew       Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Inquiry {
+  id          Int      @id @default(autoincrement())
+  fullName    String
+  email       String
+  phone       String?
+  company     String?
+  subject     String?
+  message     String   @db.Text
+  productName String?
+  status      String   @default("UNREAD") // UNREAD, IN_REVIEW, RESPONDED
+  createdAt   DateTime @default(now())
+}
