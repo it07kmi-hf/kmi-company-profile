@@ -1,16 +1,31 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ppneuemontreal-book.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ppneuemontreal-italic.woff",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/ppneuemontreal-medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ppneuemontreal-bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neue-montreal",
   display: "swap",
 });
 
@@ -40,9 +55,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${plusJakarta.variable} scroll-smooth`}
+      className={`${neueMontreal.variable} scroll-smooth`}
     >
-      <body className="font-sans bg-white text-[#111827] antialiased selection:bg-amber-100 selection:text-amber-900">
+      <body className={`${neueMontreal.className} font-sans bg-white text-[#111827] antialiased selection:bg-amber-100 selection:text-amber-900`}>
         {children}
       </body>
     </html>
