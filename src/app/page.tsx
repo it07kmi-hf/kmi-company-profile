@@ -9,6 +9,7 @@ import CraftsmanshipSplitSection from '@/components/CraftsmanshipSplitSection'
 import FooterSection from '@/components/FooterSection'
 import FloatingButton from '@/components/FloatingButton'
 import SearchModal from '@/components/SearchModal'
+import VideoModal from '@/components/VideoModal'
 
 const TOTAL_SECTIONS = 5
 
@@ -23,6 +24,7 @@ const SECTION_NAMES = [
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [videoModalOpen, setVideoModalOpen] = useState(false)
   const isAnimatingRef = useRef(false)
   const currentSectionRef = useRef(0)
 
@@ -140,7 +142,10 @@ export default function Home() {
       >
         {/* SECTION 0: HERO (100vh) */}
         <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
-          <HeroSection onExploreClick={() => goToSection(1)} />
+          <HeroSection
+            onExploreClick={() => goToSection(1)}
+            onWatchVideo={() => setVideoModalOpen(true)}
+          />
         </div>
 
         {/* SECTION 1: EXPLORE OUR CATEGORIES (100vh - Pure White & Carousel) */}
@@ -155,7 +160,9 @@ export default function Home() {
 
         {/* SECTION 3: CRAFTSMANSHIP & SIDOARJO FACILITY (100vh - Split Screen) */}
         <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
-          <CraftsmanshipSplitSection />
+          <CraftsmanshipSplitSection
+            onWatchVideo={() => setVideoModalOpen(true)}
+          />
         </div>
 
         {/* SECTION 4: COMPLIANCE, FACTORY LOCATION & FOOTER (100vh) */}
@@ -199,6 +206,13 @@ export default function Home() {
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
         onSelectResult={() => goToSection(1)}
+      />
+
+      {/* Full Company Profile Video Cinema Modal */}
+      <VideoModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoSrc="/video/video_company_profile.mp4"
       />
     </div>
   )

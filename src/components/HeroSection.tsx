@@ -1,23 +1,29 @@
 'use client'
 
-import { ArrowDown, Compass, MessageCircle } from 'lucide-react'
+import { ArrowDown, Compass, MessageCircle, Play } from 'lucide-react'
 
 interface HeroSectionProps {
   onExploreClick: () => void
+  onWatchVideo?: () => void
 }
 
-export default function HeroSection({ onExploreClick }: HeroSectionProps) {
+export default function HeroSection({ onExploreClick, onWatchVideo }: HeroSectionProps) {
   return (
-    <section className="relative w-full h-full min-h-screen flex flex-col justify-between items-center overflow-hidden bg-white flex-shrink-0 pt-20 sm:pt-24 pb-6 sm:pb-8">
-      {/* Background Visual (Clean, Warm Wood Atmosphere) */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2200&auto=format&fit=crop"
-          alt="PT Kayu Mebel Indonesia Sidoarjo"
-          className="w-full h-full object-cover"
-        />
-        {/* Soft, warm atmospheric gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/25" />
+    <section className="relative w-full h-full min-h-screen flex flex-col justify-between items-center overflow-hidden bg-black flex-shrink-0 pt-20 sm:pt-24 pb-6 sm:pb-8">
+      {/* Background Visual (Curated Cinematic Factory Video Loop) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/video/hero-poster.jpg"
+          className="w-full h-full object-cover scale-105"
+        >
+          <source src="/video/kmi-hero-loop.mp4" type="video/mp4" />
+        </video>
+        {/* Soft, warm atmospheric gradient overlay for crisp text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35" />
       </div>
 
       {/* Spacer to balance vertical centering */}
@@ -33,8 +39,8 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           </span>
         </h1>
 
-        {/* Actions (Clean button row) */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+        {/* Actions (Clean button row with Watch Video) */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <button
             onClick={onExploreClick}
             className="w-full sm:w-auto px-7 py-3 bg-white hover:bg-gray-100 text-gray-950 font-semibold text-xs tracking-widest uppercase rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
@@ -42,6 +48,16 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
             <Compass className="w-4 h-4" />
             <span>Explore Products</span>
           </button>
+
+          {onWatchVideo && (
+            <button
+              onClick={onWatchVideo}
+              className="w-full sm:w-auto px-6 py-3 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold text-xs tracking-widest uppercase rounded-full backdrop-blur-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+            >
+              <Play className="w-3.5 h-3.5 fill-current text-[#F4E3D7]" />
+              <span>Watch Factory Film</span>
+            </button>
+          )}
 
           <a
             href="https://wa.me/6281234567890"
@@ -55,7 +71,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Animated Bouncing Arrow (Placed in natural bottom flow, NEVER overlapping buttons) */}
+      {/* Animated Bouncing Arrow */}
       <div className="relative z-10 flex flex-col items-center pt-2">
         <button
           onClick={onExploreClick}
