@@ -43,7 +43,12 @@ export const metadata: Metadata = {
     "Private Label Furniture",
   ],
   icons: {
-    icon: "/logo-kmi.png",
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo-kmi.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/logo-kmi.png',
   },
 };
 
