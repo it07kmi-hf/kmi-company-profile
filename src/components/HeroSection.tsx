@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 interface HeroSectionProps {
   onExploreClick: () => void
@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onExploreClick }: HeroSectionProps) {
   return (
-    <section className="relative w-full h-full min-h-screen flex flex-col justify-between items-center overflow-hidden bg-black flex-shrink-0 pt-20 sm:pt-24 pb-6 sm:pb-8">
+    <section className="relative w-full h-full min-h-screen flex flex-col justify-between items-center overflow-hidden bg-black flex-shrink-0 pt-20 sm:pt-24 pb-8 sm:pb-10">
       {/* Background Visual (Curated Cinematic Factory Video Loop) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -40,21 +40,30 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         </h1>
       </div>
 
-      {/* Animated Bouncing Arrow */}
-      <div className="relative z-10 flex flex-col items-center pt-2">
+      {/* Luxury Editorial Scroll Cue (No clunky button box) */}
+      <div className="relative z-10 flex flex-col items-center">
         <button
           onClick={onExploreClick}
-          className="flex flex-col items-center group cursor-pointer"
-          aria-label="Scroll to Categories"
+          className="group flex flex-col items-center cursor-pointer transition-all duration-300 select-none"
+          aria-label="Discover PT Kayu Mebel Indonesia"
         >
-          <span className="text-[10px] tracking-[0.25em] uppercase text-white/80 group-hover:text-emerald-300 transition-colors mb-1.5">
+          <span className="text-[10px] sm:text-[11px] tracking-[0.35em] uppercase text-white/80 group-hover:text-emerald-300 transition-colors font-medium mb-2.5">
             Discover
           </span>
-          <div className="w-8 h-8 rounded-md border border-white/40 group-hover:border-emerald-400/80 bg-black/25 backdrop-blur-sm flex items-center justify-center transition-all animate-bounce">
-            <ArrowDown className="w-3.5 h-3.5 text-white group-hover:text-emerald-300 transition-colors" />
+
+          {/* Minimalist Architectural Hairline Indicator */}
+          <div className="relative flex flex-col items-center">
+            {/* Fine hairline track with travelling light beam */}
+            <div className="w-[1.5px] h-9 bg-white/25 group-hover:bg-emerald-400/30 overflow-hidden relative rounded-full transition-colors">
+              <div className="w-full h-4 bg-gradient-to-b from-transparent via-emerald-300 to-white animate-scroll-beam" />
+            </div>
+
+            {/* Subtle hovering chevron */}
+            <ChevronDown className="w-4 h-4 text-white/70 group-hover:text-emerald-300 transition-all transform group-hover:translate-y-1 mt-0.5" />
           </div>
         </button>
       </div>
     </section>
   )
 }
+

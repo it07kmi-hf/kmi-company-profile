@@ -94,3 +94,25 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Luxury Editorial Scroll Indicator Animation */
+@keyframes scrollBeam {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(240%);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-beam {
+  animation: scrollBeam 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
