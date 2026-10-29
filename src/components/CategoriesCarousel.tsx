@@ -27,10 +27,6 @@ export default function CategoriesCarousel() {
         {/* Section Header (Clean, bold, compact so it NEVER collides with navbar) */}
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <div className="inline-flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase mb-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              <span>Export Portfolio</span>
-            </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-gray-950 tracking-tight">
               Explore our Categories
             </h2>

@@ -53,10 +53,9 @@ export default function NewCollectionsSection() {
 
       {/* Clean Bottom Text Overlay (Exactly like Q-Works Section 3) */}
       <div className="absolute bottom-10 left-0 right-0 z-10 text-center px-4">
-        <div className="inline-flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-emerald-400 uppercase mb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span>New Season Showcase</span>
-        </div>
+        <span className="text-[10px] sm:text-xs font-medium tracking-[0.25em] text-emerald-400/90 uppercase block mb-2 drop-shadow-md">
+          New Season Showcase
+        </span>
         <h3 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
           {activeCollection.title}
         </h3>

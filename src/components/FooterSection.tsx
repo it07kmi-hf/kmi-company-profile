@@ -1,135 +1,113 @@
 'use client'
 
-import { ShieldCheck, Trees, Globe2, MapPin, Mail, Phone } from 'lucide-react'
+import { ShieldCheck, Trees, Globe2, ArrowUpRight, MessageCircle } from 'lucide-react'
 import { COMPANY_INFO } from '@/data/mockData'
 
 export default function FooterSection() {
   return (
     <section
       id="contact-footer"
-      className="relative w-full h-full min-h-screen bg-[#111111] text-gray-300 flex flex-col justify-between pt-20 sm:pt-24 pb-6 px-4 sm:px-6 lg:px-8 flex-shrink-0 overflow-y-auto no-scrollbar"
+      className="relative w-full h-full min-h-screen bg-[#0d0f12] text-gray-300 flex flex-col justify-between pt-20 sm:pt-24 pb-8 px-6 sm:px-10 lg:px-16 flex-shrink-0 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto w-full my-auto">
-        {/* Compliance Badges Row */}
-        <div className="mb-6 sm:mb-8">
-          <div className="text-center max-w-xl mx-auto mb-4 sm:mb-6">
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] text-emerald-400 uppercase block mb-1">
-              Export Compliance & Sustainability
-            </span>
-            <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white">
-              Certified Legal Wood For Global Markets
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
-              <ShieldCheck className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="text-xs font-bold text-white">SVLK & V-Legal Certified</div>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
-                  100% legal timber certified for EU Timber Regulations & US Lacey Act.
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
-              <Trees className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="text-xs font-bold text-white">FSC Chain of Custody</div>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
-                  Responsible timber sourcing with strict environmental traceability.
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
-              <Globe2 className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="text-xs font-bold text-white">Direct Sea Export</div>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
-                  Direct FOB/CIF export shipping via Tanjung Perak Port (Surabaya).
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto w-full my-auto flex flex-col justify-center">
+        {/* Bold Architectural Headline */}
+        <div className="mb-8 sm:mb-12">
+          <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-emerald-400 uppercase block mb-3">
+            Global Export & Manufacturing
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] max-w-3xl">
+            Start Your Production Inquiry
+          </h2>
         </div>
 
-        {/* Corporate Address & Contact Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 py-6 border-t border-white/10">
-          {/* Brand Info */}
-          <div className="md:col-span-5 space-y-3">
-            <div className="flex items-center space-x-3">
-              <img
-                src="/logo-kmi.png"
-                alt="PT Kayu Mebel Indonesia"
-                className="h-10 w-auto object-contain bg-white/10 p-1 rounded-lg"
-              />
-              <div>
-                <span className="font-serif text-base font-bold text-white tracking-wider block">
-                  {COMPANY_INFO.name}
-                </span>
-                <span className="text-[9px] tracking-[0.2em] text-emerald-400 uppercase font-light block">
-                  ESTABLISHED {COMPANY_INFO.foundedYear} · SIDOARJO, INDONESIA
-                </span>
-              </div>
+        {/* Clean 3-Column Editorial Grid (No walls of text) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 py-8 border-y border-white/10">
+          {/* Column 1: Direct Inquiries */}
+          <div className="md:col-span-5 space-y-4">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Direct Contact
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed font-light max-w-sm">
-              Produsen dan eksportir mebel kayu solid, interior living, housing components,
-              dan profil cetakan kayu berkualitas tinggi untuk pasar Jepang, Amerika Serikat, dan Eropa.
-            </p>
-          </div>
-
-          {/* Official Factory Address */}
-          <div className="md:col-span-4 space-y-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white">
-              Factory & Office Location
-            </div>
-            <div className="flex items-start space-x-2 text-xs text-gray-300">
-              <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="leading-relaxed">
-                {COMPANY_INFO.address}
-              </span>
-            </div>
-          </div>
-
-          {/* Direct Communication */}
-          <div className="md:col-span-3 space-y-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white">
-              Direct Inquiries
-            </div>
-            <div className="space-y-1.5 text-xs text-gray-300">
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <div>
+              <a
+                href={`mailto:${COMPANY_INFO.email}`}
+                className="group inline-flex items-center space-x-1.5 text-xl sm:text-2xl font-serif text-white hover:text-emerald-400 transition-colors"
+              >
                 <span>{COMPANY_INFO.email}</span>
+                <ArrowUpRight className="w-5 h-5 text-gray-500 group-hover:text-emerald-400 transition-colors" />
+              </a>
+              <div className="text-xs sm:text-sm text-gray-400 mt-1 font-light">
+                Phone: {COMPANY_INFO.phone}
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>{COMPANY_INFO.phone}</span>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Halo%20PT%20Kayu%20Mebel%20Indonesia`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center space-x-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wider uppercase rounded-full transition-all shadow-md hover:shadow-emerald-600/30"
+              >
+                <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                <span>Chat via WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Facility & Logistics */}
+          <div className="md:col-span-4 space-y-3">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Facility & Port
+            </div>
+            <div className="text-xs text-gray-300 leading-relaxed font-light space-y-1">
+              <div className="font-medium text-white">Sidoarjo Integrated Plant</div>
+              <div>Jl. Manunggal Jati No. KM 23, Krian</div>
+              <div>Sidoarjo, East Java 61262, Indonesia</div>
+              <div className="pt-1.5 text-emerald-400 text-[11px]">
+                Direct export via Tanjung Perak Port (FOB / CIF)
               </div>
-              <div className="pt-2">
-                <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Halo%20PT%20Kayu%20Mebel%20Indonesia`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center space-x-2 px-4 py-2 bg-[#25D366] hover:bg-[#20bd5a] text-black font-semibold text-xs rounded-lg transition-all"
-                >
-                  <span>Chat WhatsApp Sales</span>
-                </a>
+            </div>
+          </div>
+
+          {/* Column 3: Compliance Credential Chips */}
+          <div className="md:col-span-3 space-y-3">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Export Compliance
+            </div>
+            <div className="space-y-2.5 text-xs">
+              <div className="flex items-center space-x-2.5 text-gray-200">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span className="font-light">SVLK & V-Legal Certified</span>
+              </div>
+              <div className="flex items-center space-x-2.5 text-gray-200">
+                <Trees className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span className="font-light">FSC Chain of Custody</span>
+              </div>
+              <div className="flex items-center space-x-2.5 text-gray-200">
+                <Globe2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span className="font-light">EU Timber & US Lacey Act</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto w-full pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500">
-        <div>
-          © 2026 PT Kayu Mebel Indonesia. All Rights Reserved.
-        </div>
-        <div className="flex items-center space-x-4 mt-2 sm:mt-0">
-          <span>Official Domain: kayumebel.net</span>
-          <span>·</span>
-          <span>Sidoarjo, Jawa Timur</span>
+        {/* Corporate Minimalist Footer Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
+          <div className="flex items-center space-x-3">
+            <img
+              src="/logo-kmi.png"
+              alt="PT Kayu Mebel Indonesia"
+              className="h-7 w-auto object-contain opacity-85"
+            />
+            <span className="font-serif font-semibold text-gray-300 text-sm">
+              PT Kayu Mebel Indonesia
+            </span>
+          </div>
+
+          <div className="flex items-center space-x-3 text-[11px] text-gray-400">
+            <span>© 2026 PT Kayu Mebel Indonesia</span>
+            <span>·</span>
+            <span>kayumebel.net</span>
+          </div>
         </div>
       </div>
     </section>

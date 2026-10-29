@@ -17,10 +17,9 @@ export default function CraftsmanshipSplitSection({
       {/* Left Column (Desktop: Kiri, Mobile: Bawah) - Pure White with Clean Bold Typography like Q-Works */}
       <div className="w-full lg:w-5/12 flex flex-col justify-center px-8 sm:px-14 lg:px-20 py-12 lg:py-16 bg-white z-10 order-2 lg:order-1">
         <div className="max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-800 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold mb-3 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-            <span>Integrated Woodworking Facility</span>
-          </div>
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] font-medium text-emerald-700 block mb-2">
+            Integrated Woodworking Facility
+          </span>
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-950 tracking-tight leading-tight mb-4">
             Masterpiece Furniture in Motion
           </h2>
