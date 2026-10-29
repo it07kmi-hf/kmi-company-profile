@@ -13,14 +13,6 @@ import VideoModal from '@/components/VideoModal'
 
 const TOTAL_SECTIONS = 5
 
-const SECTION_NAMES = [
-  'Hero',
-  'Categories',
-  'Collections',
-  'Craftsmanship',
-  'Contact & Location',
-]
-
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -169,33 +161,6 @@ export default function Home() {
         <div className="w-full h-screen flex-shrink-0 relative overflow-hidden">
           <FooterSection />
         </div>
-      </div>
-
-      {/* Vertical Section Indicator Dots (Right Edge, exactly like fullPage.js) */}
-      <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col space-y-3">
-        {SECTION_NAMES.map((name, idx) => (
-          <button
-            key={idx}
-            onClick={() => goToSection(idx)}
-            className="group relative flex items-center justify-end cursor-pointer"
-            aria-label={`Go to ${name}`}
-          >
-            {/* Tooltip on hover */}
-            <span className="opacity-0 group-hover:opacity-100 mr-3 px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase rounded bg-black/80 text-white backdrop-blur-sm transition-opacity pointer-events-none whitespace-nowrap">
-              {name}
-            </span>
-            {/* Dot circle */}
-            <div
-              className={`rounded-full transition-all duration-300 ${
-                currentSection === idx
-                  ? 'w-3 h-3 bg-emerald-600 ring-2 ring-emerald-500/40 ring-offset-2'
-                  : currentSection === 0
-                  ? 'w-2 h-2 bg-white/60 hover:bg-white'
-                  : 'w-2 h-2 bg-gray-400 hover:bg-gray-800'
-              }`}
-            />
-          </button>
-        ))}
       </div>
 
       {/* Floating Action Button (Dynamic Scroll to Top / Bottom) */}
