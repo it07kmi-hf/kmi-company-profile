@@ -45,7 +45,7 @@ export default function SearchModal({
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 md:p-20 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-2xl bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-2xl text-gray-900">
         {/* Search Input Bar */}
-        <div className="relative flex items-center border-b border-gray-200 pb-4">
+        <div className="relative flex items-center border-b border-gray-200 focus-within:border-emerald-600 pb-4 transition-colors">
           <Search className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
           <input
             type="text"
@@ -67,7 +67,7 @@ export default function SearchModal({
         <div className="max-h-[60vh] overflow-y-auto mt-4 space-y-4 no-scrollbar">
           {query.trim() === '' ? (
             <div className="py-8 text-center text-xs text-gray-500">
-              <Sparkles className="w-4 h-4 text-[#8C6239] mx-auto mb-2" />
+              <Sparkles className="w-4 h-4 text-emerald-600 mx-auto mb-2" />
               <span>Cari kategori produk mebel, koleksi, atau jenis kayu (Jati, Mahoni, Sungkai)</span>
             </div>
           ) : (
@@ -82,13 +82,13 @@ export default function SearchModal({
                       <div
                         key={c.id}
                         onClick={() => handleItemClick(c.name)}
-                        className="p-3 rounded-xl bg-gray-50 hover:bg-amber-50/60 border border-gray-100 hover:border-amber-200 transition-all cursor-pointer flex items-center justify-between"
+                        className="p-3 rounded-xl bg-gray-50 hover:bg-emerald-50/70 border border-gray-100 hover:border-emerald-200 transition-all cursor-pointer flex items-center justify-between group"
                       >
                         <div>
-                          <div className="text-xs font-semibold text-gray-900">{c.name}</div>
+                          <div className="text-xs font-semibold text-gray-900 group-hover:text-emerald-900 transition-colors">{c.name}</div>
                           <div className="text-[10px] text-gray-500">{c.woodType}</div>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-[#8C6239]" />
+                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all" />
                       </div>
                     ))}
                   </div>
@@ -105,13 +105,13 @@ export default function SearchModal({
                       <div
                         key={col.id}
                         onClick={() => handleItemClick(col.title)}
-                        className="p-3 rounded-xl bg-gray-50 hover:bg-amber-50/60 border border-gray-100 hover:border-amber-200 transition-all cursor-pointer flex items-center justify-between"
+                        className="p-3 rounded-xl bg-gray-50 hover:bg-emerald-50/70 border border-gray-100 hover:border-emerald-200 transition-all cursor-pointer flex items-center justify-between group"
                       >
                         <div>
-                          <div className="text-xs font-semibold text-gray-900">{col.title}</div>
+                          <div className="text-xs font-semibold text-gray-900 group-hover:text-emerald-900 transition-colors">{col.title}</div>
                           <div className="text-[10px] text-gray-500">{col.wood}</div>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-[#8C6239]" />
+                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all" />
                       </div>
                     ))}
                   </div>

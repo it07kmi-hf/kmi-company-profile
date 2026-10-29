@@ -188,7 +188,7 @@ export default function Home() {
             <div
               className={`rounded-full transition-all duration-300 ${
                 currentSection === idx
-                  ? 'w-3 h-3 bg-[#8C6239] ring-2 ring-[#8C6239]/40 ring-offset-2'
+                  ? 'w-3 h-3 bg-emerald-600 ring-2 ring-emerald-500/40 ring-offset-2'
                   : currentSection === 0
                   ? 'w-2 h-2 bg-white/60 hover:bg-white'
                   : 'w-2 h-2 bg-gray-400 hover:bg-gray-800'

@@ -68,9 +68,9 @@ export default function Header({
           <div className="hidden lg:flex items-center space-x-8 text-xs font-semibold tracking-widest uppercase">
             <button
               onClick={() => handleNavClick(2)}
-              className={`transition-colors cursor-pointer ${
+              className={`transition-colors cursor-pointer relative py-1 ${
                 isScrolled
-                  ? 'text-gray-700 hover:text-black'
+                  ? 'text-gray-700 hover:text-emerald-700'
                   : 'text-white/90 hover:text-white'
               }`}
             >
@@ -79,9 +79,9 @@ export default function Header({
 
             <button
               onClick={() => handleNavClick(3)}
-              className={`transition-colors cursor-pointer ${
+              className={`transition-colors cursor-pointer relative py-1 ${
                 isScrolled
-                  ? 'text-gray-700 hover:text-black'
+                  ? 'text-gray-700 hover:text-emerald-700'
                   : 'text-white/90 hover:text-white'
               }`}
             >
@@ -90,13 +90,13 @@ export default function Header({
 
             <button
               onClick={onOpenSearch}
-              className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+              className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer border ${
                 isScrolled
-                  ? 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-                  : 'bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm'
+                  ? 'bg-gray-100 hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 border-gray-200 hover:border-emerald-300'
+                  : 'bg-white/15 hover:bg-white/25 text-white border-white/20 hover:border-emerald-300/60 backdrop-blur-sm'
               }`}
             >
-              <Search className="w-3.5 h-3.5" />
+              <Search className="w-3.5 h-3.5 text-emerald-400 sm:text-inherit" />
               <span>Search</span>
             </button>
           </div>

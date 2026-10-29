@@ -27,6 +27,10 @@ export default function CategoriesCarousel() {
         {/* Section Header (Clean, bold, compact so it NEVER collides with navbar) */}
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
+            <div className="inline-flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase mb-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              <span>Export Portfolio</span>
+            </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-gray-950 tracking-tight">
               Explore our Categories
             </h2>
@@ -36,14 +40,14 @@ export default function CategoriesCarousel() {
           <div className="flex items-center space-x-2.5">
             <button
               onClick={() => scroll('left')}
-              className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-950 bg-white hover:bg-gray-950 text-gray-700 hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+              className="w-10 h-10 rounded-full border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
               aria-label="Previous Category"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-950 bg-white hover:bg-gray-950 text-gray-700 hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+              className="w-10 h-10 rounded-full border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
               aria-label="Next Category"
             >
               <ChevronRight className="w-4 h-4" />

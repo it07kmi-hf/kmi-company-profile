@@ -13,7 +13,7 @@ export default function FooterSection() {
         {/* Compliance Badges Row */}
         <div className="mb-6 sm:mb-8">
           <div className="text-center max-w-xl mx-auto mb-4 sm:mb-6">
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] text-[#C5A880] uppercase block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] text-emerald-400 uppercase block mb-1">
               Export Compliance & Sustainability
             </span>
             <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white">
@@ -22,8 +22,8 @@ export default function FooterSection() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start space-x-3">
-              <ShieldCheck className="w-5 h-5 text-[#4ade80] mt-0.5 flex-shrink-0" />
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
+              <ShieldCheck className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs font-bold text-white">SVLK & V-Legal Certified</div>
                 <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
@@ -32,8 +32,8 @@ export default function FooterSection() {
               </div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start space-x-3">
-              <Trees className="w-5 h-5 text-[#4ade80] mt-0.5 flex-shrink-0" />
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
+              <Trees className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs font-bold text-white">FSC Chain of Custody</div>
                 <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
@@ -42,8 +42,8 @@ export default function FooterSection() {
               </div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start space-x-3">
-              <Globe2 className="w-5 h-5 text-[#4ade80] mt-0.5 flex-shrink-0" />
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors flex items-start space-x-3">
+              <Globe2 className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs font-bold text-white">Direct Sea Export</div>
                 <div className="text-[11px] text-gray-400 mt-0.5 leading-snug">
@@ -68,7 +68,7 @@ export default function FooterSection() {
                 <span className="font-serif text-base font-bold text-white tracking-wider block">
                   {COMPANY_INFO.name}
                 </span>
-                <span className="text-[9px] tracking-[0.2em] text-[#C5A880] uppercase font-light block">
+                <span className="text-[9px] tracking-[0.2em] text-emerald-400 uppercase font-light block">
                   ESTABLISHED {COMPANY_INFO.foundedYear} · SIDOARJO, INDONESIA
                 </span>
               </div>
@@ -85,7 +85,7 @@ export default function FooterSection() {
               Factory & Office Location
             </div>
             <div className="flex items-start space-x-2 text-xs text-gray-300">
-              <MapPin className="w-4 h-4 text-[#C5A880] mt-0.5 flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
               <span className="leading-relaxed">
                 {COMPANY_INFO.address}
               </span>
@@ -99,11 +99,11 @@ export default function FooterSection() {
             </div>
             <div className="space-y-1.5 text-xs text-gray-300">
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#C5A880] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>{COMPANY_INFO.email}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#C5A880] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>{COMPANY_INFO.phone}</span>
               </div>
               <div className="pt-2">

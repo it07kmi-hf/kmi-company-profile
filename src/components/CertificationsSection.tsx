@@ -49,7 +49,7 @@ export default function CertificationsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-semibold tracking-[0.25em] text-[#8C6239] uppercase block mb-1">
+          <span className="text-xs font-semibold tracking-[0.25em] text-emerald-700 uppercase block mb-1">
             Global Compliance & Integrity
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-950 mt-1">
@@ -66,12 +66,12 @@ export default function CertificationsSection() {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-gray-200/80 hover:border-[#8C6239]/50 shadow-sm hover:shadow-lg transition-all group"
+                className="p-6 rounded-2xl bg-white border border-gray-200/80 hover:border-emerald-500/50 shadow-sm hover:shadow-lg transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-[#8C6239] mb-4 group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-emerald-600 mb-4 group-hover:scale-105 transition-transform">
                   <Icon className="w-6 h-6" />
                 </div>
-                <div className="text-[11px] uppercase tracking-wider text-[#8C6239] font-mono font-semibold">
+                <div className="text-[11px] uppercase tracking-wider text-emerald-700 font-mono font-semibold">
                   {cert.subtitle}
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mt-1 mb-2 font-serif">

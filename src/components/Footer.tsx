@@ -24,7 +24,7 @@ export default function Footer() {
                 <span className="font-serif text-base font-bold text-white tracking-wider block">
                   PT KAYU MEBEL INDONESIA
                 </span>
-                <span className="text-[9px] tracking-[0.2em] text-[#C5A880] uppercase font-light block">
+                <span className="text-[9px] tracking-[0.2em] text-emerald-400 uppercase font-light block">
                   SIDOARJO · EAST JAVA · INDONESIA
                 </span>
               </div>
@@ -36,13 +36,13 @@ export default function Footer() {
               dengan standar legalitas kayu SVLK & FSC bersertifikat.
             </p>
 
-            <div className="flex items-center space-x-3 pt-2 text-[#C5A880]">
+            <div className="flex items-center space-x-3 pt-2 text-emerald-400">
               {/* Instagram */}
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-gray-700 hover:border-[#C5A880] flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-gray-700 hover:border-emerald-400 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-gray-700 hover:border-[#C5A880] flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-gray-700 hover:border-emerald-400 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-gray-700 hover:border-[#C5A880] flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-gray-700 hover:border-emerald-400 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -126,17 +126,17 @@ export default function Footer() {
             </div>
             <div className="space-y-2.5 text-xs">
               <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-[#C5A880] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span>
                   Kawasan Industri Sidoarjo, Jawa Timur 61254, Indonesia
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#C5A880] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>info@kayumebel.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#C5A880] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>+62 291 591 888 / +62 812-3456-7890</span>
               </div>
             </div>

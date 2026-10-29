@@ -62,7 +62,7 @@ export default function RootLayout({
       lang="en"
       className={`${neueMontreal.variable} scroll-smooth`}
     >
-      <body className={`${neueMontreal.className} font-sans bg-white text-[#111827] antialiased selection:bg-amber-100 selection:text-amber-900`}>
+      <body className={`${neueMontreal.className} font-sans bg-white text-[#111827] antialiased selection:bg-emerald-100 selection:text-emerald-900`}>
         {children}
       </body>
     </html>
