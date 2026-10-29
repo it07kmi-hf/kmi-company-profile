@@ -29,22 +29,13 @@ export default function CraftsmanshipSplitSection({
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
-            <a
-              href="https://wa.me/6281234567890"
-              target="_blank"
-              rel="noreferrer"
-              className="w-full sm:w-auto inline-block text-center px-7 py-3 bg-black hover:bg-gray-800 text-white font-semibold text-xs tracking-wider uppercase rounded-full transition-all shadow-sm"
-            >
-              Contact Specialist
-            </a>
-
             {onWatchVideo && (
               <button
                 onClick={onWatchVideo}
-                className="w-full sm:w-auto flex items-center justify-center space-x-2 px-5 py-3 border border-gray-300 hover:border-emerald-600 text-gray-900 hover:text-emerald-700 font-semibold text-xs tracking-wider uppercase rounded-full transition-all cursor-pointer bg-white group"
+                className="w-full sm:w-auto flex items-center justify-center space-x-2.5 px-8 py-3.5 bg-black hover:bg-emerald-700 text-white font-semibold text-xs tracking-wider uppercase rounded-full transition-all cursor-pointer shadow-sm group"
               >
-                <Play className="w-3.5 h-3.5 fill-current text-gray-900 group-hover:text-emerald-600 transition-colors" />
-                <span>Watch Full Film</span>
+                <Play className="w-3.5 h-3.5 fill-current text-white transition-colors" />
+                <span>Watch Factory Film</span>
               </button>
             )}
           </div>

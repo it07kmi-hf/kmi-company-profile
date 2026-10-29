@@ -1,7 +1,6 @@
 'use client'
 
-import { ShieldCheck, Trees, Globe2, ArrowUpRight, MessageCircle } from 'lucide-react'
-import { COMPANY_INFO } from '@/data/mockData'
+import { ShieldCheck, Trees, Globe2, MapPin } from 'lucide-react'
 
 export default function FooterSection() {
   return (
@@ -13,78 +12,77 @@ export default function FooterSection() {
         {/* Bold Architectural Headline */}
         <div className="mb-8 sm:mb-12">
           <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-emerald-400 uppercase block mb-3">
-            Global Export & Manufacturing
+            Global Manufacturing & Export Standards
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] max-w-3xl">
-            Start Your Production Inquiry
+            Certified Legal Woodcraft <br className="hidden sm:inline" />
+            <span className="text-gray-400 font-normal italic">For International Markets</span>
           </h2>
         </div>
 
-        {/* Clean 3-Column Editorial Grid (No walls of text) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 py-8 border-y border-white/10">
-          {/* Column 1: Direct Inquiries */}
-          <div className="md:col-span-5 space-y-4">
+        {/* Clean 2-Column Editorial Grid (Direct Contact removed) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 py-8 border-y border-white/10">
+          {/* Column 1: Manufacturing Facility & Logistics */}
+          <div className="md:col-span-6 space-y-4">
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Direct Contact
+              Manufacturing Facility & Port
             </div>
-            <div>
-              <a
-                href={`mailto:${COMPANY_INFO.email}`}
-                className="group inline-flex items-center space-x-1.5 text-xl sm:text-2xl font-serif text-white hover:text-emerald-400 transition-colors"
-              >
-                <span>{COMPANY_INFO.email}</span>
-                <ArrowUpRight className="w-5 h-5 text-gray-500 group-hover:text-emerald-400 transition-colors" />
-              </a>
-              <div className="text-xs sm:text-sm text-gray-400 mt-1 font-light">
-                Phone: {COMPANY_INFO.phone}
+            <div className="space-y-2 text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+              <div className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide">
+                PT Kayu Mebel Indonesia
               </div>
-            </div>
-
-            <div className="pt-2">
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Halo%20PT%20Kayu%20Mebel%20Indonesia`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wider uppercase rounded-full transition-all shadow-md hover:shadow-emerald-600/30"
-              >
-                <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                <span>Chat via WhatsApp</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Column 2: Facility & Logistics */}
-          <div className="md:col-span-4 space-y-3">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Facility & Port
-            </div>
-            <div className="text-xs text-gray-300 leading-relaxed font-light space-y-1">
-              <div className="font-medium text-white">Sidoarjo Integrated Plant</div>
-              <div>Jl. Manunggal Jati No. KM 23, Krian</div>
-              <div>Sidoarjo, East Java 61262, Indonesia</div>
-              <div className="pt-1.5 text-emerald-400 text-[11px]">
-                Direct export via Tanjung Perak Port (FOB / CIF)
+              <div className="flex items-start space-x-2 text-gray-300 pt-1">
+                <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                <span>
+                  Jl. Manunggal Jati No. KM 23, Krian, Sidoarjo, Jawa Timur 61262, Indonesia
+                </span>
+              </div>
+              <div className="pt-2 text-emerald-400 text-xs font-medium">
+                Direct sea export container dispatch via Tanjung Perak Port (Surabaya) · FOB / CIF
               </div>
             </div>
           </div>
 
-          {/* Column 3: Compliance Credential Chips */}
-          <div className="md:col-span-3 space-y-3">
+          {/* Column 2: Export Compliance Credentials */}
+          <div className="md:col-span-6 space-y-4">
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Export Compliance
+              Export Compliance & Sustainability
             </div>
-            <div className="space-y-2.5 text-xs">
-              <div className="flex items-center space-x-2.5 text-gray-200">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span className="font-light">SVLK & V-Legal Certified</span>
+            <div className="space-y-3.5 text-xs sm:text-sm">
+              <div className="flex items-start space-x-3 text-gray-200">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white">SVLK & V-Legal Certified</div>
+                  <div className="text-gray-400 text-xs font-light mt-0.5">
+                    100% verified legal timber sourced according to Indonesian national standards.
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center space-x-2.5 text-gray-200">
-                <Trees className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span className="font-light">FSC Chain of Custody</span>
+
+              <div className="flex items-start space-x-3 text-gray-200">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Trees className="w-4 h-4 text-emerald-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white">FSC Chain of Custody</div>
+                  <div className="text-gray-400 text-xs font-light mt-0.5">
+                    Strict environmental traceability from sustainably managed teak & mahogany plantations.
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center space-x-2.5 text-gray-200">
-                <Globe2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span className="font-light">EU Timber & US Lacey Act</span>
+
+              <div className="flex items-start space-x-3 text-gray-200">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Globe2 className="w-4 h-4 text-emerald-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white">EU Timber & US Lacey Act Compliant</div>
+                  <div className="text-gray-400 text-xs font-light mt-0.5">
+                    Full regulatory clearance for smooth customs entry into European, US, and Japanese ports.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
