@@ -57,26 +57,6 @@ export default function CraftsmanshipSplitSection({
 
         {/* Soft gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
-
-        {/* Floating Play Full Film Trigger Overlay */}
-        {onWatchVideo && (
-          <button
-            onClick={onWatchVideo}
-            className="absolute bottom-6 right-6 z-20 flex items-center space-x-3 px-4 py-2.5 rounded-full bg-black/65 hover:bg-black/90 text-white border border-white/20 hover:border-emerald-400/50 backdrop-blur-md transition-all transform hover:scale-105 cursor-pointer shadow-lg group"
-          >
-            <div className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center transition-transform group-hover:scale-110 shadow-sm">
-              <Play className="w-3 h-3 fill-current ml-0.5" />
-            </div>
-            <div className="text-left">
-              <div className="text-[11px] font-semibold tracking-wider uppercase leading-none group-hover:text-emerald-300 transition-colors">
-                Play Company Video
-              </div>
-              <div className="text-[9px] text-gray-300 tracking-wider font-light mt-0.5">
-                Full 5 Min Documentary
-              </div>
-            </div>
-          </button>
-        )}
       </div>
     </section>
   )
