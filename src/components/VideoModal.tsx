@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { X, Play, Pause, Volume2, VolumeX, Maximize2 } from 'lucide-react'
+import { X } from 'lucide-react'
 
 interface VideoModalProps {
   isOpen: boolean
@@ -47,51 +47,65 @@ export default function VideoModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-300"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 backdrop-blur-2xl p-4 sm:p-6 md:p-8 animate-in fade-in duration-200"
       onClick={onClose}
     >
+      {/* Top Floating Cinema Bar */}
       <div
-        className="relative w-full max-w-5xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/15"
+        className="w-full max-w-4xl flex items-center justify-between pb-3 sm:pb-4 text-white"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header Bar */}
-        <div className="flex items-center justify-between px-5 py-3.5 bg-neutral-900/90 border-b border-white/10">
-          <div className="flex items-center space-x-3">
-            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider uppercase text-white">
-                PT Kayu Mebel Indonesia
-              </h3>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest">
-                Official Company & Factory Profile · Sidoarjo
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={onClose}
-            className="p-2 rounded-full hover:bg-white/10 text-gray-300 hover:text-white transition-colors cursor-pointer"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+        <div className="flex items-center space-x-2.5">
+          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-white/90">
+            Factory Tour & Craftsmanship Film
+          </span>
+          <span className="hidden sm:inline text-xs text-white/40">·</span>
+          <span className="hidden sm:inline text-xs text-white/50 tracking-wider">
+            PT Kayu Mebel Indonesia
+          </span>
         </div>
 
-        {/* Video Player */}
-        <div className="relative aspect-video w-full bg-black">
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            controls
-            autoPlay
-            playsInline
-            className="w-full h-full object-contain"
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <button
+          onClick={onClose}
+          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all cursor-pointer border border-white/15 active:scale-95"
+          aria-label="Close cinema mode"
+        >
+          <span className="text-[10px] tracking-widest uppercase font-mono">ESC</span>
+          <X className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* Main Video Cinema Frame */}
+      <div
+        className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/20"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          controls
+          autoPlay
+          playsInline
+          className="w-full h-full object-contain bg-black"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Subtle Bottom Caption */}
+      <div
+        className="w-full max-w-4xl flex items-center justify-between pt-3 text-[11px] text-white/40"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span>Full Company Profile (5:35)</span>
+        <button
+          onClick={onClose}
+          className="hover:text-white/80 transition-colors cursor-pointer"
+        >
+          Click anywhere outside to close ✕
+        </button>
       </div>
     </div>
   )
 }
-
