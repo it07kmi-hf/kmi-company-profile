@@ -1,111 +1,88 @@
 'use client'
 
-import { ShieldCheck, Trees, Globe2, MapPin } from 'lucide-react'
+import { MapPin, ArrowUpRight } from 'lucide-react'
 
 export default function FooterSection() {
   return (
     <section
       id="contact-footer"
-      className="relative w-full h-full min-h-screen bg-[#0d0f12] text-gray-300 flex flex-col justify-between pt-20 sm:pt-24 pb-8 px-6 sm:px-10 lg:px-16 flex-shrink-0 overflow-hidden"
+      className="relative w-full h-full min-h-screen bg-[#0d0f12] text-gray-300 flex flex-col justify-between pt-24 sm:pt-28 pb-8 sm:pb-10 px-6 sm:px-10 lg:px-16 flex-shrink-0 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto w-full my-auto flex flex-col justify-center">
-        {/* Bold Architectural Headline */}
-        <div className="mb-8 sm:mb-12">
+      {/* Centered Main Editorial Content */}
+      <div className="max-w-5xl mx-auto w-full my-auto flex flex-col justify-center">
+        {/* Editorial Subtitle & Main Title */}
+        <div className="mb-8 sm:mb-10 text-center sm:text-left">
           <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-emerald-400 uppercase block mb-3">
-            Global Manufacturing & Export Standards
+            Global Manufacturing & Export
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] max-w-3xl">
-            Certified Legal Woodcraft <br className="hidden sm:inline" />
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15]">
+            Precision Woodcraft Built <br className="hidden sm:inline" />
             <span className="text-gray-400 font-normal italic">For International Markets</span>
           </h2>
         </div>
 
-        {/* Clean 2-Column Editorial Grid (Direct Contact removed) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 py-8 border-y border-white/10">
-          {/* Column 1: Manufacturing Facility & Logistics */}
-          <div className="md:col-span-6 space-y-4">
+        {/* Facility & Careers Quick Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-10 py-6 sm:py-8 border-y border-white/10">
+          {/* Manufacturing Facility Info */}
+          <div className="md:col-span-7 space-y-3">
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
               Manufacturing Facility & Port
             </div>
-            <div className="space-y-2 text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
-              <div className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide">
+            <div className="space-y-1.5 text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+              <div className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
                 PT Kayu Mebel Indonesia
               </div>
-              <div className="flex items-start space-x-2 text-gray-300 pt-1">
+              <div className="flex items-start space-x-2 text-gray-300">
                 <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span>
                   Jl. Manunggal Jati No. KM 23, Krian, Sidoarjo, Jawa Timur 61262, Indonesia
                 </span>
               </div>
-              <div className="pt-2 text-emerald-400 text-xs font-medium">
-                Direct sea export container dispatch via Tanjung Perak Port (Surabaya) · FOB / CIF
+              <div className="pt-1 text-emerald-400 text-xs font-medium">
+                Direct container ocean export via Tanjung Perak Port (Surabaya) · FOB / CIF
               </div>
             </div>
           </div>
 
-          {/* Column 2: Export Compliance Credentials */}
-          <div className="md:col-span-6 space-y-4">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Export Compliance & Sustainability
-            </div>
-            <div className="space-y-3.5 text-xs sm:text-sm">
-              <div className="flex items-start space-x-3 text-gray-200">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          {/* Careers & Talent Portal Link */}
+          <div className="md:col-span-5 flex flex-col justify-center sm:items-start md:items-end">
+            <a
+              href="https://recruitment.kayumebel.net/careers"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-white/5 hover:bg-emerald-500/15 border border-white/15 hover:border-emerald-400/50 text-white transition-all shadow-sm cursor-pointer"
+            >
+              <div className="text-left">
+                <div className="text-[10px] text-emerald-400 uppercase tracking-widest font-semibold">
+                  Join Our Team
                 </div>
-                <div>
-                  <div className="font-semibold text-white">SVLK & V-Legal Certified</div>
-                  <div className="text-gray-400 text-xs font-light mt-0.5">
-                    100% verified legal timber sourced according to Indonesian national standards.
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3 text-gray-200">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Trees className="w-4 h-4 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="font-semibold text-white">FSC Chain of Custody</div>
-                  <div className="text-gray-400 text-xs font-light mt-0.5">
-                    Strict environmental traceability from sustainably managed teak & mahogany plantations.
-                  </div>
+                <div className="text-xs sm:text-sm font-medium tracking-wide">
+                  Explore Careers at KMI
                 </div>
               </div>
-
-              <div className="flex items-start space-x-3 text-gray-200">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Globe2 className="w-4 h-4 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="font-semibold text-white">EU Timber & US Lacey Act Compliant</div>
-                  <div className="text-gray-400 text-xs font-light mt-0.5">
-                    Full regulatory clearance for smooth customs entry into European, US, and Japanese ports.
-                  </div>
-                </div>
-              </div>
-            </div>
+              <ArrowUpRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform ml-1" />
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* Corporate Minimalist Footer Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
-          <div className="flex items-center space-x-3">
-            <img
-              src="/logo-kmi.png"
-              alt="PT Kayu Mebel Indonesia"
-              className="h-7 w-auto object-contain opacity-85"
-            />
-            <span className="font-serif font-semibold text-gray-300 text-sm">
-              PT Kayu Mebel Indonesia
-            </span>
-          </div>
+      {/* Corporate Bottom Bar - Permanently In-View */}
+      <div className="max-w-5xl mx-auto w-full pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3 border-t border-white/5">
+        <div className="flex items-center space-x-3">
+          <img
+            src="/logo-kmi.png"
+            alt="PT Kayu Mebel Indonesia"
+            className="h-7 w-auto object-contain opacity-90"
+          />
+          <span className="font-serif font-semibold text-gray-300 text-sm">
+            PT Kayu Mebel Indonesia
+          </span>
+        </div>
 
-          <div className="flex items-center space-x-3 text-[11px] text-gray-400">
-            <span>© 2026 PT Kayu Mebel Indonesia</span>
-            <span>·</span>
-            <span>kayumebel.net</span>
-          </div>
+        <div className="flex items-center space-x-3 text-[11px] text-gray-500">
+          <span>© 2026 PT Kayu Mebel Indonesia</span>
+          <span>·</span>
+          <span>kayumebel.net</span>
         </div>
       </div>
     </section>

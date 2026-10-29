@@ -198,8 +198,12 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Floating Action Button (+) */}
-      <FloatingButton onScrollToTop={() => goToSection(0)} />
+      {/* Floating Action Button (Dynamic Scroll to Top / Bottom) */}
+      <FloatingButton
+        currentSection={currentSection}
+        totalSections={TOTAL_SECTIONS}
+        onNavigateSection={goToSection}
+      />
 
       {/* Search Modal */}
       <SearchModal

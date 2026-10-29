@@ -88,6 +88,19 @@ export default function Header({
               ABOUT
             </button>
 
+            <a
+              href="https://recruitment.kayumebel.net/careers"
+              target="_blank"
+              rel="noreferrer"
+              className={`transition-colors cursor-pointer relative py-1 flex items-center space-x-1 ${
+                isScrolled
+                  ? 'text-gray-700 hover:text-emerald-700'
+                  : 'text-white/90 hover:text-emerald-300'
+              }`}
+            >
+              <span>CAREERS</span>
+            </a>
+
             <button
               onClick={onOpenSearch}
               className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer border ${
@@ -146,6 +159,15 @@ export default function Header({
               <span>ABOUT</span>
               <span className="text-xs font-normal text-gray-500">Craftsmanship & Factory</span>
             </button>
+            <a
+              href="https://recruitment.kayumebel.net/careers"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center text-emerald-800"
+            >
+              <span className="font-semibold">CAREERS</span>
+              <span className="text-xs font-normal text-emerald-600">Recruitment Portal ↗</span>
+            </a>
           </div>
         </div>
       )}
