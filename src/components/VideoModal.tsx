@@ -68,7 +68,7 @@ export default function VideoModal({
 
         <button
           onClick={onClose}
-          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all cursor-pointer border border-white/15 active:scale-95"
+          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all cursor-pointer border border-white/15 active:scale-95"
           aria-label="Close cinema mode"
         >
           <span className="text-[10px] tracking-widest uppercase font-mono">ESC</span>

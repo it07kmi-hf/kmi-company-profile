@@ -36,14 +36,14 @@ export default function CategoriesCarousel() {
           <div className="flex items-center space-x-2.5">
             <button
               onClick={() => scroll('left')}
-              className="w-10 h-10 rounded-full border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+              className="w-10 h-10 rounded-md border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
               aria-label="Previous Category"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-10 h-10 rounded-full border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+              className="w-10 h-10 rounded-md border border-gray-300 hover:border-emerald-600 bg-white hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
               aria-label="Next Category"
             >
               <ChevronRight className="w-4 h-4" />

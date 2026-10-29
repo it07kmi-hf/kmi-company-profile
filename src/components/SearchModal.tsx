@@ -57,7 +57,7 @@ export default function SearchModal({
           />
           <button
             onClick={onClose}
-            className="p-1 rounded-full text-gray-400 hover:text-gray-900 transition-colors cursor-pointer"
+            className="p-1.5 rounded-md text-gray-400 hover:text-gray-900 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>

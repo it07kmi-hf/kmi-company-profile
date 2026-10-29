@@ -36,7 +36,7 @@ export default function NewCollectionsSection() {
       {/* Navigation Arrow Left (Like Q-Works White Arrow) */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/35 hover:bg-black/75 hover:border-emerald-400/50 border border-white/20 text-white hover:text-emerald-300 flex items-center justify-center transition-all cursor-pointer backdrop-blur-sm"
+        className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-md bg-black/35 hover:bg-black/75 hover:border-emerald-400/50 border border-white/20 text-white hover:text-emerald-300 flex items-center justify-center transition-all cursor-pointer backdrop-blur-sm"
         aria-label="Previous Slide"
       >
         <ChevronLeft className="w-7 h-7" />
@@ -45,7 +45,7 @@ export default function NewCollectionsSection() {
       {/* Navigation Arrow Right (Like Q-Works White Arrow) */}
       <button
         onClick={handleNext}
-        className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/35 hover:bg-black/75 hover:border-emerald-400/50 border border-white/20 text-white hover:text-emerald-300 flex items-center justify-center transition-all cursor-pointer backdrop-blur-sm"
+        className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-md bg-black/35 hover:bg-black/75 hover:border-emerald-400/50 border border-white/20 text-white hover:text-emerald-300 flex items-center justify-center transition-all cursor-pointer backdrop-blur-sm"
         aria-label="Next Slide"
       >
         <ChevronRight className="w-7 h-7" />

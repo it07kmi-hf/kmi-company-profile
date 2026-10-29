@@ -47,7 +47,7 @@ export default function FooterSection() {
               href="https://recruitment.kayumebel.net/careers"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-white/5 hover:bg-emerald-500/15 border border-white/15 hover:border-emerald-400/50 text-white transition-all shadow-sm cursor-pointer"
+              className="group inline-flex items-center space-x-2.5 px-6 py-3 rounded-md bg-white/5 hover:bg-emerald-500/15 border border-white/15 hover:border-emerald-400/50 text-white transition-all shadow-sm cursor-pointer"
             >
               <div className="text-left">
                 <div className="text-[10px] text-emerald-400 uppercase tracking-widest font-semibold">

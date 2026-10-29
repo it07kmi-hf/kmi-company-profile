@@ -50,7 +50,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           <span className="text-[10px] tracking-[0.25em] uppercase text-white/80 group-hover:text-emerald-300 transition-colors mb-1.5">
             Discover
           </span>
-          <div className="w-8 h-8 rounded-full border border-white/40 group-hover:border-emerald-400/80 bg-black/25 backdrop-blur-sm flex items-center justify-center transition-all animate-bounce">
+          <div className="w-8 h-8 rounded-md border border-white/40 group-hover:border-emerald-400/80 bg-black/25 backdrop-blur-sm flex items-center justify-center transition-all animate-bounce">
             <ArrowDown className="w-3.5 h-3.5 text-white group-hover:text-emerald-300 transition-colors" />
           </div>
         </button>

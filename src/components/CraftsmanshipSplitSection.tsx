@@ -32,7 +32,7 @@ export default function CraftsmanshipSplitSection({
             {onWatchVideo && (
               <button
                 onClick={onWatchVideo}
-                className="w-full sm:w-auto flex items-center justify-center space-x-2.5 px-8 py-3.5 bg-black hover:bg-emerald-700 text-white font-semibold text-xs tracking-wider uppercase rounded-full transition-all cursor-pointer shadow-sm group"
+                className="w-full sm:w-auto flex items-center justify-center space-x-2.5 px-8 py-3.5 bg-black hover:bg-emerald-700 text-white font-semibold text-xs tracking-wider uppercase rounded-md transition-all cursor-pointer shadow-sm group"
               >
                 <Play className="w-3.5 h-3.5 fill-current text-white transition-colors" />
                 <span>Watch Factory Film</span>

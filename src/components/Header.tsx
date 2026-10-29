@@ -103,7 +103,7 @@ export default function Header({
 
             <button
               onClick={onOpenSearch}
-              className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer border ${
+              className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer border ${
                 isScrolled
                   ? 'bg-gray-100 hover:bg-emerald-50 text-gray-700 hover:text-emerald-800 border-gray-200 hover:border-emerald-300'
                   : 'bg-white/15 hover:bg-white/25 text-white border-white/20 hover:border-emerald-300/60 backdrop-blur-sm'
@@ -118,7 +118,7 @@ export default function Header({
           <div className="flex items-center space-x-2 lg:hidden">
             <button
               onClick={onOpenSearch}
-              className={`p-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
+              className={`p-2 rounded-md text-xs font-medium transition-all cursor-pointer ${
                 isScrolled
                   ? 'bg-gray-100 text-gray-700'
                   : 'bg-white/15 text-white backdrop-blur-sm'

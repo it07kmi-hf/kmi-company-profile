@@ -29,7 +29,7 @@ export default function FloatingButton({
     <div className="fixed bottom-6 right-6 z-40">
       <button
         onClick={handleClick}
-        className="w-11 h-11 rounded-full bg-black/80 hover:bg-black text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer border border-white/20 backdrop-blur-sm group"
+        className="w-11 h-11 rounded-md bg-black/80 hover:bg-black text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-white/20 backdrop-blur-sm group"
         aria-label={isTopHalf ? 'Scroll to bottom' : 'Scroll to top'}
         title={isTopHalf ? 'Scroll to bottom' : 'Scroll to top'}
       >
