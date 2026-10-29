@@ -26,7 +26,7 @@ export default function FooterSection() {
           {/* Manufacturing Facility Info */}
           <div className="md:col-span-7 space-y-3">
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Manufacturing Facility & Port
+              Manufacturing Facility
             </div>
             <div className="space-y-1.5 text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
               <div className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
@@ -37,9 +37,6 @@ export default function FooterSection() {
                 <span>
                   Jl. Manunggal Jati No. KM 23, Krian, Sidoarjo, Jawa Timur 61262, Indonesia
                 </span>
-              </div>
-              <div className="pt-1 text-emerald-400 text-xs font-medium">
-                Direct container ocean export via Tanjung Perak Port (Surabaya) · FOB / CIF
               </div>
             </div>
           </div>
